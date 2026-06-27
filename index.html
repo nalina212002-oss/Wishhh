@@ -156,7 +156,7 @@
 </body>
 <script>
     let datetxt = "30 June";
-    let datatxtletter = "Aieee Putaniii😍🫶y life. Today,let datatxtletter = `🫶Wish u many More Happy Returns Of The Day Putaniii🎂🎉🤍🫶 God Bless You🤍I wish to be keep smiling Forever🤍
+    let datatxtletter = "Aieee Putaniii😍🫶.🤍Wish u many More Happy Returns Of The Day Putaniii🎂🎉🤍🫶 God Bless You🤍I wish to be keep smiling Forever🤍
 Nim birthday dinaa old della nenskondu halbedi ok na putanii🤜🤛🫶 i know nimge halu barutte antha but plchh halbedi.
 Nim special day dina nivuu tumbaa kushi agi erbekuu😍 yavaglu nagtane erbekuu🤍 hope halla antkontini🤭 haltidre puttta goskara adru smile madi 🤭.
 Black mail alla but nivuu nagta erbeku adike 😁.
@@ -196,11 +196,21 @@ Once again Boss Happy Birthday🫶🤍💕";
 
     var intervalContent;
     var intervalTitle;
-    $("#btn__letter").on("click", function () {
-        $(".box__letter").slideDown()
-        setTimeout(function () {
-            $(".letter__border").slideDown();
-        }, 1000)
+    $("#btn__letter").click(function () {
+    $(".boxMail").addClass("active");
+
+    let i = 0;
+    text__letter.textContent = "";
+
+    let typing = setInterval(function () {
+        if (i < datatxtletter.length) {
+            text__letter.textContent += datatxtletter.charAt(i);
+            i++;
+        } else {
+            clearInterval(typing);
+        }
+    }, 30);
+});
         setTimeout(function () {
             intervalTitle = setInterval(function () {
                 if (currentIndexTitle < charArrTitle.length) {
