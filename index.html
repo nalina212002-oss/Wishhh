@@ -156,7 +156,7 @@
 </body>
 <script>
     let datetxt = "30 June";
-    let datatxtletter = "Aieee Putaniii😍🫶.🤍Wish u many More Happy Returns Of The Day Putaniii🎂🎉🤍🫶 God Bless You🤍I wish to be keep smiling Forever🤍
+    let datatxtletter = `Aieee Putaniii😍🫶.🤍Wish u many More Happy Returns Of The Day Putaniii🎂🎉🤍🫶 God Bless You🤍I wish to be keep smiling Forever🤍
 Nim birthday dinaa old della nenskondu halbedi ok na putanii🤜🤛🫶 i know nimge halu barutte antha but plchh halbedi.
 Nim special day dina nivuu tumbaa kushi agi erbekuu😍 yavaglu nagtane erbekuu🤍 hope halla antkontini🤭 haltidre puttta goskara adru smile madi 🤭.
 Black mail alla but nivuu nagta erbeku adike 😁.
@@ -168,7 +168,7 @@ Smile madirtura antkontini🧿🤍.
 Ege nagta eri ok naa putanii🤍😍🫶.
 Putani word yake andre putani happy agi yavaglu cute smile madtirutte putani papugulu adhe tara nivuu madli anno reason ge nivu putaniii tara nagi🤭🧿.
 Matte yen helli putani bagge helokke tumbaa ede but jasti helbardu bidi🤭.
-Once again Boss Happy Birthday🫶🤍💕";
+Once again Boss Happy Birthday🫶🤍💕`;
     let titleLetter = "To you";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
@@ -195,12 +195,18 @@ Once again Boss Happy Birthday🫶🤍💕";
     }, 12000)
 
     var intervalContent;
-    var intervalTitle;
-    $("#btn__letter").click(function () {
+var intervalTitle;
+
+let boxmail = document.querySelector(".boxMail");
+let close = document.querySelector(".fa-xmark");
+
+$("#btn__letter").click(function () {
+
     $(".boxMail").addClass("active");
 
-    let i = 0;
     text__letter.textContent = "";
+
+    let i = 0;
 
     let typing = setInterval(function () {
         if (i < datatxtletter.length) {
@@ -210,72 +216,12 @@ Once again Boss Happy Birthday🫶🤍💕";
             clearInterval(typing);
         }
     }, 30);
+
 });
-        setTimeout(function () {
-            intervalTitle = setInterval(function () {
-                if (currentIndexTitle < charArrTitle.length) {
-                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
-                    let i = document.createElement("i");
-                    i.className = "fa-solid fa-heart"
-                    document.querySelector(".title__letter").appendChild(i)
-                    currentIndexTitle++;
-                }
-                else {
-                    clearInterval(intervalTitle)
-                }
-            }, 100)
-        }, 2000)
-        setTimeout(function () {
-            document.querySelector("#heart__letter").classList.add("animationOp");
-            document.querySelector(".love__img").classList.add("animationOp");
-            document.querySelector("#mewmew").classList.add("animationOp");
-        }, 2800)
-        setTimeout(function () {
-            document.querySelectorAll(".heart").forEach((item) => {
-                item.classList.add("animation")
-            })
-        }, 3500)
-        setTimeout(function () {
-            intervalContent = setInterval(function () {
-                if (currentIndexLetter < charArrDateLetter.length) {
-                    text__letter.textContent += charArrDateLetter[currentIndexLetter];
-                    currentIndexLetter++;
-                }
-                else {
-                    clearInterval(intervalContent)
-                }
-            }, 50)
-        }, 6000)
-    })
-    $(".close").on("click", function () {
-        clearInterval(intervalContent)
-        document.querySelector(".title__letter").textContent = "";
-        text__letter.textContent = "";
-        currentIndexLetter = 0
-        currentIndexTitle = 0
-        document.querySelector("#heart__letter").classList.remove("animationOp");
-        document.querySelector(".love__img").classList.remove("animationOp");
-        document.querySelector("#mewmew").classList.remove("animationOp");
-        document.querySelectorAll(".heart").forEach((item) => {
-            item.classList.remove("animation")
-        })
-        $(".box__letter").slideUp();
-        $(".letter__border").slideUp();
-    })
 
-
-
-    let mailBox = document.querySelector('.mail')
-    let boxmail = document.querySelector('.boxMail')
-    var close = document.querySelector('.fa-xmark')
-    mailBox.onclick = function () {
-        mailBox.classList.toggle('active')
-        boxmail.classList.add('active')
-    }
-
-    close.addEventListener('click', function () {
-        boxmail.classList.remove('active')
-    })
+close.addEventListener("click", function () {
+    $(".boxMail").removeClass("active");
+});
 </script>
 
 </html>
