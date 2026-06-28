@@ -826,7 +826,7 @@ body {
 .boxMail .boxMail-container{
     position: absolute;
     width: 750px;
-    height: 500px;
+    height: 650px;
     display: flex;
     margin: 0;
     transform: scale(0.9);
@@ -914,9 +914,12 @@ body {
     position: relative;
     background-color: #FF7882;
     transition: all 1s;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: "Inter", serif;
     color: #fff;
+    padding-bottom: 30px;
+
 }
 .boxMail .boxMail-container:hover .card2-content{
     transform: translate(20px, 20px);
@@ -949,9 +952,12 @@ body {
 }
 .boxMail .boxMail-container .card2 h2{
     font-family: 'Dancing Script', cursive;
-    padding: 0px 20px;
+    padding: 10px 20px 30px;
     text-indent: 20px;
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 1.8;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     opacity: 0;
 }
 .boxMail .boxMail-container .card2:hover h2{
