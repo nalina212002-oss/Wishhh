@@ -190,47 +190,33 @@ Matte yen helli putani bagge helokke tumbaa ede but jasti helbardu bidi🤭.Once
 
     var intervalContent;
     var intervalTitle;
-    $("#btn__letter").on("click", function () {
-        $(".box__letter").slideDown()
-        setTimeout(function () {
-            $(".letter__border").slideDown();
-        }, 1000)
-        setTimeout(function () {
-            intervalTitle = setInterval(function () {
-                if (currentIndexTitle < charArrTitle.length) {
-                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
-                    let i = document.createElement("i");
-                    i.className = "fa-solid fa-heart"
-                    document.querySelector(".title__letter").appendChild(i)
-                    currentIndexTitle++;
-                }
-                else {
-                    clearInterval(intervalTitle)
-                }
-            }, 100)
-        }, 2000)
-        setTimeout(function () {
-            document.querySelector("#heart__letter").classList.add("animationOp");
-            document.querySelector(".love__img").classList.add("animationOp");
-            document.querySelector("#mewmew").classList.add("animationOp");
-        }, 2800)
-        setTimeout(function () {
-            document.querySelectorAll(".heart").forEach((item) => {
-                item.classList.add("animation")
-            })
-        }, 3500)
-        setTimeout(function () {
-            intervalContent = setInterval(function () {
-                if (currentIndexLetter < charArrDateLetter.length) {
-                    text__letter.textContent += charArrDateLetter[currentIndexLetter];
-                    currentIndexLetter++;
-                }
-                else {
-                    clearInterval(intervalContent)
-                }
-            }, 50)
-        }, 6000)
-    })
+    $("#btn__letter").click(function () {
+
+    boxmail.classList.add("active");
+
+    let message = document.querySelector(".card2-content h2");
+
+    message.textContent = "";
+
+    let i = 0;
+
+    let typing = setInterval(function () {
+
+        if (i < datatxtletter.length) {
+
+            message.textContent += datatxtletter.charAt(i);
+
+            i++;
+
+        } else {
+
+            clearInterval(typing);
+
+        }
+
+    },30);
+
+});
     $(".close").on("click", function () {
         clearInterval(intervalContent)
         document.querySelector(".title__letter").textContent = "";
